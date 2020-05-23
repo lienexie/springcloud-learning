@@ -1,0 +1,25 @@
+server:
+  port: 8901
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # \u914D\u7F6E\u5B58\u50A8\u914D\u7F6E\u4FE1\u606F\u7684Git\u4ED3\u5E93
+          uri: https://gitee.com/JourWon/springcloud-config.git
+          username: JourWon
+          password: 123456
+          # \u5F00\u542F\u542F\u52A8\u65F6\u76F4\u63A5\u4ECEgit\u83B7\u53D6\u914D\u7F6E
+          clone-on-start: true
+          # \u83B7\u53D6\u5B50\u76EE\u5F55\u4E0B\u7684\u914D\u7F6E
+#          search-paths: '{application}'
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
